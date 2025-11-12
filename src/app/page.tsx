@@ -6,26 +6,32 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <div className="w-1/2 mx-auto mt-16">
-        <h1 className="text-3xl font-bold">
-          Every Store, Every Option, At Your Fingertips
-        </h1>
-        <h1 className="text-3xl text-end font-bold mt-4">
-          No More Shopping FOMO
-        </h1>
-        <div className="flex flex-wrap">
-          <Image
-            src={heroImage}
-            alt="hero Image people wearing clothes on the beach"
-            width={500}
-            height={500}
-          ></Image>
-          <Image
-            src={heroImage2}
-            alt="hero Image people wearing clothes on the beach"
-            width={500}
-            height={500}
-          ></Image>
+      <div className="lg:w-3/5 mx-auto mt-16 sm:w-full">
+        <div className="px-7">
+          <h1 className="text-3xl font-bold ">
+            Every Store, Every Option, At Your Fingertips
+          </h1>
+          <h1 className="text-3xl text-end font-bold mt-4 mb-8">
+            No More Shopping FOMO
+          </h1>
+        </div>
+        <div className="grid grid-cols-12 ">
+          <div className="flex justify-center lg:col-span-6 md:col-span-12 sm:col-span-12 col-span-12">
+            <Image
+              src={heroImage}
+              alt="hero Image people wearing clothes on the beach"
+              width={500}
+              height={500}
+            ></Image>
+          </div>
+          <div className="flex justify-center lg:col-span-6 md:col-span-12 sm:col-span-12 col-span-12">
+            <Image
+              src={heroImage2}
+              alt="hero Image people wearing clothes on the beach"
+              width={500}
+              height={500}
+            ></Image>
+          </div>
         </div>
         <div className="flex justify-center">
           {" "}
