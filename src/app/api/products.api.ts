@@ -22,7 +22,7 @@ export async function getProducts(
   if (search) params.append("search", search);
 
   const res = await fetch(
-    `https://flaskbackend-wassup.up.railway.app/getAllProducts?${params.toString()}`
+    `${process.env.NEXT_PUBLIC_API}/getAllProducts?${params.toString()}`
   );
   return await res.json();
 }

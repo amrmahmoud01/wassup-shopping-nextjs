@@ -1,4 +1,4 @@
 export async function getAllCategories() {
-  const res = await fetch("https://flaskbackend-wassup.up.railway.app/getCats");
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API}/getCats`);
   return await res.json();
 }

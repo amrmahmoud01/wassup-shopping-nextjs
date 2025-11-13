@@ -1,5 +1,5 @@
 export async function getStores() {
-  const res = await fetch("https://flaskbackend-wassup.up.railway.app/getStores");
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API}/getStores`);
 
   return await res.json();
 }

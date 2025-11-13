@@ -27,7 +27,7 @@ export default function MyNavbar() {
         <NavbarToggle className="block lg:hidden" />
 
         {/* Collapse (direct child of Navbar!) */}
-        <NavbarCollapse className="hidden lg:flex">
+        <NavbarCollapse className="">
           <NavbarLink
             className="block py-2 !px-4 text-3xl text-white font-bold"
             href="/"
