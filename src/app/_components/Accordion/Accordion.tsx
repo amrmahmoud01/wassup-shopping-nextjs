@@ -15,11 +15,11 @@ import { getAllCategories } from "@/app/api/getAllCategories.api";
 import { useSearchParams } from "next/navigation";
 import { UseFormRegister, UseFormWatch } from "react-hook-form";
 import { FilterAccordionPropsType } from "@/types/FilterAccordionPropsType";
-
-
+import { getGenders } from "@/app/api/getGenders.api";
 
 export function FilterAccordion({ register, watch }: FilterAccordionPropsType) {
   const [stores, setStores] = useState([]);
+  const [genders, setGenders] = useState([]);
   const [categories, setcategories] = useState([]);
 
   const params = useSearchParams();
@@ -27,6 +27,7 @@ export function FilterAccordion({ register, watch }: FilterAccordionPropsType) {
   useEffect(() => {
     getStores().then(setStores);
     getAllCategories().then(setcategories);
+    getGenders().then(setGenders);
   }, []);
 
   return (
@@ -69,6 +70,30 @@ export function FilterAccordion({ register, watch }: FilterAccordionPropsType) {
                 />
                 <Label htmlFor={cat.category} className="mt-5">
                   {cat.category}
+                </Label>
+              </div>
+            );
+          })}
+        </AccordionContent>
+      </AccordionPanel>
+
+      <AccordionPanel>
+        <AccordionTitle>By Gender</AccordionTitle>
+        <AccordionContent>
+          {genders.map((gender: { gender: string }) => {
+            return (
+              <div key={gender.gender} className="flex items-center gap-2">
+                <Checkbox
+                  id={gender.gender}
+                  className="mt-5"
+                  value={gender.gender}
+                  {...register("category")}
+                  defaultChecked={params
+                    .getAll("category")
+                    .includes(`${gender.gender}`)}
+                />
+                <Label htmlFor={gender.gender} className="mt-5 capitalize">
+                  {gender.gender}
                 </Label>
               </div>
             );
