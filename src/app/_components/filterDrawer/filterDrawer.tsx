@@ -4,7 +4,7 @@ import { Button, Drawer, DrawerHeader, DrawerItems } from "flowbite-react";
 import { useState } from "react";
 import { FilterAccordion } from "./../Accordion/Accordion";
 import { useForm } from "react-hook-form";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { FilterFormType } from "@/types/FilterFormType.type";
 
 export function FilterDrawer() {
@@ -21,7 +21,7 @@ export function FilterDrawer() {
   } = useForm<FilterFormType>();
 
   async function onSubmit(data:FilterFormType) {
-    const params = new URLSearchParams();
+    const params = new URLSearchParams(useSearchParams());
     params.set("page", "1"); // always reset to first page
     if (data.store) data.store.forEach((s) => params.append("store", s));
     if (data.category)

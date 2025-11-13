@@ -28,6 +28,8 @@ export default function ShopContent() {
   const [hasNext, setHasNext] = useState(true);
 
   const searchParams = useSearchParams();
+  const newParams = new URLSearchParams(searchParams);
+  console.log("New params:", newParams);
 
   const page = Number(searchParams.get("page")) || 1;
   const stores = searchParams.getAll("store");
@@ -64,9 +66,9 @@ export default function ShopContent() {
   const router = useRouter();
 
   function onSearchSubmit(data: FieldValues) {
-    const searchParams = new URLSearchParams();
-    searchParams.append("search", data.searchbar);
-    router.push(`/shop?${searchParams.toString()}`);
+    newParams.set("search", data.searchbar);
+    console.log(data.searchbar)
+    router.push(`/shop?${newParams.toString()}`);
   }
 
   return (
@@ -77,7 +79,6 @@ export default function ShopContent() {
             <Input
               className="w-full mt-10 rounded-2xl border-4 py-4"
               placeholder="🔎 Search"
-              onKeyUp={() => console.log(search)}
               {...register("searchbar")}
             />
             <button
