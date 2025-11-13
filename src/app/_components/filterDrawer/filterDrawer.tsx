@@ -20,8 +20,8 @@ export function FilterDrawer() {
     formState: { errors },
   } = useForm<FilterFormType>();
 
-  async function onSubmit(data:FilterFormType) {
-    const params = new URLSearchParams(useSearchParams());
+  async function onSubmit(data: FilterFormType) {
+    const params = new URLSearchParams();
     params.set("page", "1"); // always reset to first page
     if (data.store) data.store.forEach((s) => params.append("store", s));
     if (data.category)
