@@ -15,7 +15,7 @@ export default function Home() {
             No More Shopping FOMO
           </h1>
         </div>
-        <div className="grid grid-cols-12 ">
+        <div className="grid grid-cols-12">
           <div className="flex justify-center lg:col-span-6 md:col-span-12 sm:col-span-12 col-span-12">
             <Image
               src={heroImage}

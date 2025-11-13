@@ -91,7 +91,7 @@ export default function ShopContent() {
         <FilterDrawer />
       </div>
 
-      <div className="grid grid-cols-12 justify-center items-center mx-auto gap-10 mt-8 ">
+      <div className="grid grid-cols-12 justify-center items-center mx-auto gap-14 mt-8 w-10/12">
         {products.map((product: Product) => (
           <div
             className="col-span-12 lg:col-span-6 xl:col-span-4 md:col-span-6 sm:col-span-12 xs:col-span-12 flex justify-center"

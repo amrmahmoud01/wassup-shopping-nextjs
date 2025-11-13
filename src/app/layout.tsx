@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Lexend } from "next/font/google";
 import "./globals.css";
-import Navbar from "./_components/navbar/navbar";
 
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
+import MyNavbar from "./_components/navbar/navbar";
 config.autoAddCss = false
 
 const geistSans = Geist({
@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={lexend.className}>
-        <Navbar />
+        <MyNavbar />
         {children}
       </body>
     </html>
