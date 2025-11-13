@@ -31,6 +31,7 @@ export default function MyNavbar() {
           <NavbarLink
             className="block py-2 !px-4 text-3xl text-white font-bold"
             href="/"
+            as={Link}
             active
           >
             Home
@@ -44,12 +45,14 @@ export default function MyNavbar() {
           </NavbarLink>
           <NavbarLink
             className="block py-2 !px-4 text-3xl text-white font-bold"
+            as={Link}
             href="/about"
           >
             About Us
           </NavbarLink>
           <NavbarLink
             className="block py-2 !px-4 text-3xl text-white font-bold"
+            as={Link}
             href="/request-store"
           >
             Request a Store
