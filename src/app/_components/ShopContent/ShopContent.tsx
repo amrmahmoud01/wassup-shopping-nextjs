@@ -24,6 +24,7 @@ import { FilterDrawer } from "../filterDrawer/filterDrawer";
 import SingleProduct from "../singleProduct/singleProduct";
 
 export default function ShopContent() {
+  const [loading, setloading] = useState(true);
   const [products, setProducts] = useState([]);
   const [hasNext, setHasNext] = useState(true);
 
@@ -36,8 +37,10 @@ export default function ShopContent() {
   const categories = searchParams.getAll("category");
   const minPrice = searchParams.get("minPrice") ?? undefined;
   const maxPrice = searchParams.get("maxPrice") ?? undefined;
+  const search = searchParams.get("search") ?? undefined;
 
   async function fetchProducts() {
+    setloading(true);
     const { products, hasNext } = await getProducts(
       page,
       categories.length ? categories : undefined,
@@ -48,6 +51,7 @@ export default function ShopContent() {
     );
     setProducts(products);
     setHasNext(hasNext);
+    setloading(false);
   }
 
   function buildHref(pageNo: number) {
@@ -61,13 +65,11 @@ export default function ShopContent() {
     fetchProducts();
   }, [searchParams]);
 
-  const search = watch("searchbar");
-
   const router = useRouter();
 
   function onSearchSubmit(data: FieldValues) {
     newParams.set("search", data.searchbar);
-    console.log(data.searchbar)
+    console.log(data.searchbar);
     router.push(`/shop?${newParams.toString()}`);
   }
 
@@ -91,6 +93,11 @@ export default function ShopContent() {
         </div>
         <FilterDrawer />
       </div>
+      {loading && (
+        <div className="flex justify-center items-center mt-10">
+          <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+        </div>
+      )}
 
       <div className="grid grid-cols-12 justify-center items-center mx-auto gap-14 mt-8 w-10/12">
         {products.map((product: Product) => (
