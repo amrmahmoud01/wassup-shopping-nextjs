@@ -14,11 +14,11 @@ export default function MyNavbar() {
     <div>
       <Navbar
         fluid
-        className="bg-gray-700 border-gray-200 dark:bg-gray-900 w-full !px-10 py-10"
+        className="bg-[rgba(51,51,51,1)] border-gray-200 w-full !px-10 py-10"
       >
         {/* Brand */}
         <NavbarBrand as={Link} href="/" className="max-w-[60%]">
-          <span className="font-bold text-5xl text-yellow-300 md:whitespace-normal">
+          <span className="font-bold text-5xl text-[#ffeb3b] md:whitespace-normal">
             WASSUP Shopping
           </span>
         </NavbarBrand>

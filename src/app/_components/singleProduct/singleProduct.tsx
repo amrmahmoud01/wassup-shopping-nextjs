@@ -22,14 +22,8 @@ export default function SingleProduct(props: { data: Product }) {
   return (
     <div className="product-card text-center break-normal w-120 h-150 justify-start flex flex-col items-center bg-gray-300 overflow-hidden">
       <Link target="_blank" href={data.link} className="w-full">
-        <div className="relative h-135 w-full ">
-          <Image
-            className="object-contain"
-            src={image}
-            fill
-            alt=""
-            loading="lazy"
-          />
+        <div className="relative h-135 w-full justify-center flex items-start">
+          <Image className="object-contain" src={image} alt="" fill loading="lazy" />
         </div>
       </Link>
       <Link

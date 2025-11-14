@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <div className="lg:w-3/5 mx-auto mt-16 sm:w-full">
+      <div className="lg:w-3/5 mx-auto mt-5 sm:w-full">
         <div className="px-7">
           <h1 className="text-3xl font-bold ">
             Every Store, Every Option, At Your Fingertips
@@ -20,16 +20,16 @@ export default function Home() {
             <Image
               src={heroImage}
               alt="hero Image people wearing clothes on the beach"
-              width={500}
-              height={500}
+              width={400}
+              height={400}
             ></Image>
           </div>
           <div className="flex justify-center lg:col-span-6 md:col-span-12 sm:col-span-12 col-span-12">
             <Image
               src={heroImage2}
               alt="hero Image people wearing clothes on the beach"
-              width={500}
-              height={500}
+              width={400}
+              height={400}
             ></Image>
           </div>
         </div>
@@ -38,7 +38,7 @@ export default function Home() {
           <Link href={"/shop"}>
             <button
               type="button"
-              className="cursor-pointer text-white mt-10 text-3xl cursor-pointer bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full px-30 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              className="cursor-pointer mt-10 text-3xl cursor-pointer bg-[#3F51B5] text-[#FFEB3B] hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full px-30 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
               Find Your Look Now
             </button>

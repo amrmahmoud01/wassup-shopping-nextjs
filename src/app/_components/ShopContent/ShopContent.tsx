@@ -79,7 +79,7 @@ export default function ShopContent() {
         <div className="mx-auto w-full relative flex justify-center">
           <form onSubmit={handleSubmit(onSearchSubmit)} className="w-full">
             <Input
-              className="w-full mt-10 rounded-2xl border-4 py-4"
+              className="w-full mt-10 rounded-3xl border-4 py-4 border-[#3F51B5] focus:border-[#3F51B5] focus-visible:border-[#3F51B5]"
               placeholder="🔎 Search"
               {...register("searchbar")}
             />
@@ -93,22 +93,22 @@ export default function ShopContent() {
         </div>
         <FilterDrawer />
       </div>
-      {loading && (
+      {loading ? (
         <div className="flex justify-center items-center mt-10">
           <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
         </div>
+      ) : (
+        <div className="grid grid-cols-12 justify-center items-center mx-auto gap-14 mt-8 w-10/12">
+          {products.map((product: Product) => (
+            <div
+              className="col-span-12 lg:col-span-6 xl:col-span-4 md:col-span-6 sm:col-span-12 xs:col-span-12 flex justify-center"
+              key={product.id}
+            >
+              <SingleProduct data={product} />
+            </div>
+          ))}
+        </div>
       )}
-
-      <div className="grid grid-cols-12 justify-center items-center mx-auto gap-14 mt-8 w-10/12">
-        {products.map((product: Product) => (
-          <div
-            className="col-span-12 lg:col-span-6 xl:col-span-4 md:col-span-6 sm:col-span-12 xs:col-span-12 flex justify-center"
-            key={product.id}
-          >
-            <SingleProduct data={product} />
-          </div>
-        ))}
-      </div>
 
       <Pagination className="my-10">
         <PaginationContent>
