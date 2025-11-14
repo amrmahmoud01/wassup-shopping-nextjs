@@ -1,64 +1,72 @@
 "use client";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
-import {
-  Navbar,
-  NavbarBrand,
-  NavbarCollapse,
-  NavbarLink,
-  NavbarToggle,
-} from "flowbite-react";
-import React from "react";
+import React, { useState } from "react";
 
-export default function MyNavbar() {
+export default function NewNavbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div>
-      <Navbar
-        fluid
-        className="bg-[rgba(51,51,51,1)] border-gray-200 w-full !px-10 py-10"
-      >
-        {/* Brand */}
-        <NavbarBrand as={Link} href="/" className="max-w-[60%]">
-          <span className="font-bold text-5xl text-[#ffeb3b] md:whitespace-normal">
+    <>
+      {/* NAVBAR */}
+      <div className="w-full p-10 bg-[#333333] flex justify-between items-center">
+        <Link href="/">
+          <h1 className="brand font-bold text-5xl text-[#ffeb3b]">
             WASSUP Shopping
-          </span>
-        </NavbarBrand>
+          </h1>
+        </Link>
 
-        {/* Toggle (direct child of Navbar!) */}
-        <NavbarToggle className="block lg:hidden" />
+        {/* MOBILE TOGGLE BUTTON */}
+        <button
+          className="cursor-pointer lg:hidden text-white"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <FontAwesomeIcon className="text-4xl" icon={faBars} />
+        </button>
 
-        {/* Collapse (direct child of Navbar!) */}
-        <NavbarCollapse className="">
-          <NavbarLink
-            className="block py-2 !px-4 text-3xl text-white font-bold"
-            href="/"
-            as={Link}
-            active
-          >
-            Home
-          </NavbarLink>
-          <NavbarLink
-            className="block py-2 !px-4 text-3xl text-white font-bold"
-            as={Link}
-            href="/shop"
-          >
-            Shop
-          </NavbarLink>
-          <NavbarLink
-            className="block py-2 !px-4 text-3xl text-white font-bold"
-            as={Link}
-            href="/about"
-          >
-            About Us
-          </NavbarLink>
-          <NavbarLink
-            className="block py-2 !px-4 text-3xl text-white font-bold"
-            as={Link}
-            href="/request-store"
-          >
-            Request a Store
-          </NavbarLink>
-        </NavbarCollapse>
-      </Navbar>
-    </div>
+        {/* DESKTOP MENU */}
+        <div className="hidden lg:flex">
+          <ul className="w-fit flex gap-16 me-3">
+            <Link href="/home">
+              <li className="text-3xl text-white font-bold">Home</li>
+            </Link>
+            <Link href="/shop">
+              <li className="text-3xl text-white font-bold">Shop</li>
+            </Link>
+            <Link href="/about">
+              <li className="text-3xl text-white font-bold">About Us</li>
+            </Link>
+            <Link href="/request">
+              <li className="text-3xl text-white font-bold">Request a Store</li>
+            </Link>
+          </ul>
+        </div>
+      </div>
+
+      {/* MOBILE DROPDOWN MENU (animated) */}
+      <div
+        className={`
+          w-full bg-[#333333] px-5 lg:hidden 
+          overflow-hidden transition-all duration-300
+          ${isOpen ? "max-h-[500px] py-5" : "max-h-0 py-0"}
+        `}
+      >
+        <ul className="w-full flex flex-col gap-6 items-center">
+          <Link href="/home">
+            <li className="text-3xl text-white font-bold">Home</li>
+          </Link>
+          <Link href="/shop">
+            <li className="text-3xl text-white font-bold">Shop</li>
+          </Link>
+          <Link href="/about">
+            <li className="text-3xl text-white font-bold">About Us</li>
+          </Link>
+          <Link href="/request">
+            <li className="text-3xl text-white font-bold">Request a Store</li>
+          </Link>
+        </ul>
+      </div>
+    </>
   );
 }
