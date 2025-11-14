@@ -4,7 +4,7 @@ import "./globals.css";
 
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import NewNavbar from '@/app/_components/Navbar/Navbar';
+import NewNavbar from '@/app/_components/Navbar/NewNavbar';
 config.autoAddCss = false;
 
 const geistSans = Geist({
