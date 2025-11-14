@@ -28,7 +28,7 @@ export default function NewNavbar() {
         {/* DESKTOP MENU */}
         <div className="hidden lg:flex">
           <ul className="w-fit flex gap-16 me-3">
-            <Link href="/home">
+            <Link href="/">
               <li className="text-3xl text-white font-bold">Home</li>
             </Link>
             <Link href="/shop">
@@ -53,7 +53,7 @@ export default function NewNavbar() {
         `}
       >
         <ul className="w-full flex flex-col gap-6 items-center">
-          <Link href="/home">
+          <Link href="/">
             <li className="text-3xl text-white font-bold">Home</li>
           </Link>
           <Link href="/shop">
