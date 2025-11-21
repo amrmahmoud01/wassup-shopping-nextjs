@@ -3,4 +3,5 @@ export type FilterFormType = {
   minPrice: string;
   maxPrice: string;
   store: string[];
+  onSale:string;
 };

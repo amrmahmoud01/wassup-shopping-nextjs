@@ -54,6 +54,23 @@ export function FilterAccordion({ register, watch }: FilterAccordionPropsType) {
       </AccordionPanel>
 
       <AccordionPanel>
+        <AccordionTitle>Sale</AccordionTitle>
+        <AccordionContent>
+          <div className="flex max-w-md flex-col gap-4" id="checkbox">
+            <div className="flex items-center gap-2">
+              <Checkbox
+                id={"onSale"}
+                value={"True"}
+                {...register("onSale")}
+                defaultChecked={params.get("onSale") === "True"}
+              />
+              <Label htmlFor={"onSale"}>On Sale</Label>
+            </div>
+          </div>
+        </AccordionContent>
+      </AccordionPanel>
+
+      <AccordionPanel>
         <AccordionTitle>By Category</AccordionTitle>
         <AccordionContent>
           {categories.map((cat: { category: string }) => {

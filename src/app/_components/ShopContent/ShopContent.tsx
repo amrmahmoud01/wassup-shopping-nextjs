@@ -38,6 +38,7 @@ export default function ShopContent() {
   const minPrice = searchParams.get("minPrice") ?? undefined;
   const maxPrice = searchParams.get("maxPrice") ?? undefined;
   const search = searchParams.get("search") ?? undefined;
+  const onSale = searchParams.get("onSale") ?? undefined;
 
   async function fetchProducts() {
     setloading(true);
@@ -47,7 +48,8 @@ export default function ShopContent() {
       minPrice,
       maxPrice,
       stores.length ? stores : undefined,
-      search
+      search,
+      onSale
     );
     setProducts(products);
     setHasNext(hasNext);

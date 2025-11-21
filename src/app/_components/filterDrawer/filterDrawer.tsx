@@ -28,6 +28,7 @@ export function FilterDrawer() {
       data.category.forEach((c) => params.append("category", c));
     if (data.minPrice) params.set("minPrice", data.minPrice);
     if (data.maxPrice) params.set("maxPrice", data.maxPrice);
+    if (data.onSale) params.set("onSale", data.onSale);
 
     router.push(`/shop?${params.toString()}`);
     console.log("Filters:", data);

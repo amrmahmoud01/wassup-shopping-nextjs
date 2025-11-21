@@ -4,7 +4,8 @@ export async function getProducts(
   priceMin?: string,
   priceMax?: string,
   store?: string[],
-  search?: string
+  search?: string,
+  onSale?: string
 ) {
   const params = new URLSearchParams();
 
@@ -20,6 +21,8 @@ export async function getProducts(
   if (priceMax) params.append("priceMax", priceMax);
 
   if (search) params.append("search", search);
+
+  if (onSale) params.append("onSale", "True");
 
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API}/getAllProducts?${params.toString()}`

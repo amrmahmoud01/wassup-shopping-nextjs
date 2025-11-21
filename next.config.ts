@@ -5,12 +5,21 @@ const nextConfig = {
   reactCompiler: true,
   images: {
     domains: [
-      "inyourshoe.com",
+      "inyourshoe.com",        // <-- FIXED
+      "www.inyourshoe.com",
       "www.lcwaikiki.eg",
       "img-lcwaikiki.mncdn.com",
       "dfcdn.defacto.com.tr",
     ],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "inyourshoe.com",
+        pathname: "/cdn/**",
+      },
+    ],
   },
 };
 
-export default withFlowbiteReact(nextConfig); // ✅ this line is required
+export default nextConfig;
+// OR: export default withFlowbiteReact(nextConfig);
