@@ -10,6 +10,7 @@ const nextConfig = {
       "www.lcwaikiki.eg",
       "img-lcwaikiki.mncdn.com",
       "dfcdn.defacto.com.tr",
+      "or-egypt.com"
     ],
     remotePatterns: [
       {
