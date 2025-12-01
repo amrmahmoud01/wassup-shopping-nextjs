@@ -31,7 +31,7 @@ export default function SingleProduct(props: { data: Product }) {
             loading="lazy"
           />
           {Number(data.salePrice) > 0 && (
-            <span className="inline-flex items-center rounded-md mt-2 left-2 absolute bg-red-400 px-2 py-1 text-xs font-medium text-gray-600 inset-ring inset-ring-gray-500/10 z-100">
+            <span className="inline-flex items-center rounded-md mt-2 left-2 absolute bg-red-400 px-2 py-1 text-xs font-medium text-gray-600 inset-ring inset-ring-gray-500/10 z-2">
               Sale
             </span>
           )}
