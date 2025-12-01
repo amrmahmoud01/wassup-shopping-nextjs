@@ -20,6 +20,9 @@ export function FilterDrawer() {
     formState: { errors },
   } = useForm<FilterFormType>();
 
+  const searchParams = useSearchParams();
+  const search = searchParams.get("search");
+
   async function onSubmit(data: FilterFormType) {
     const params = new URLSearchParams();
     params.set("page", "1"); // always reset to first page
@@ -29,7 +32,7 @@ export function FilterDrawer() {
     if (data.minPrice) params.set("minPrice", data.minPrice);
     if (data.maxPrice) params.set("maxPrice", data.maxPrice);
     if (data.onSale) params.set("onSale", data.onSale);
-
+    if (search) params.set("search", search);
     router.push(`/shop?${params.toString()}`);
     console.log("Filters:", data);
   }
