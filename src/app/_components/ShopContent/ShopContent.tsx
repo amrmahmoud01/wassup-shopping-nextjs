@@ -70,6 +70,7 @@ export default function ShopContent() {
   const router = useRouter();
 
   function onSearchSubmit(data: FieldValues) {
+    newParams.set("page", "1");
     newParams.set("search", data.searchbar);
     console.log(data.searchbar);
     router.push(`/shop?${newParams.toString()}`);
