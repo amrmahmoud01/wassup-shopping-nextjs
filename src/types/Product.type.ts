@@ -5,4 +5,5 @@ export type Product = {
   price: string;
   link: string;
   salePrice: string;
+  store: string;
 };
