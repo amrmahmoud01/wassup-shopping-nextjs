@@ -12,7 +12,7 @@ const nextConfig = {
       "dfcdn.defacto.com.tr",
       "or-egypt.com",
       "cloud-clothing.co",
-      "https://rojada-egy.com"
+      "rojada-egy.com"
     ],
     remotePatterns: [
       {
