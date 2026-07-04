@@ -38,7 +38,7 @@ export default function Home() {
           <Link href={"/shop"}>
             <button
               type="button"
-              className="cursor-pointer mt-10 text-3xl cursor-pointer bg-[#4db53f] text-[#FFEB3B] hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full px-30 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              className="cursor-pointer mt-10 text-3xl cursor-pointer bg-[#90968f] text-[#FFEB3B] hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full px-30 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
               Find Your Look Now
             </button>
