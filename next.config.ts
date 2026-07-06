@@ -3,6 +3,7 @@ import withFlowbiteReact from "flowbite-react/plugin/nextjs";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactCompiler: true,
+  output: "standalone",
   images: {
     domains: [
       // "inyourshoe.com",        // <-- FIXED
@@ -13,7 +14,6 @@ const nextConfig = {
       "or-egypt.com",
       "cloud-clothing.co",
       "rojada-egy.com",
-      
     ],
     //TODO Improve security (use proxy) to fetch images instead of allowing every domain
     remotePatterns: [
@@ -23,21 +23,21 @@ const nextConfig = {
         pathname: "/cdn/**",
       },
       {
-        protocol: 'https',
-        hostname: '**.com'
+        protocol: "https",
+        hostname: "**.com",
       },
       {
-        protocol: 'https',
-        hostname: '**.co'
+        protocol: "https",
+        hostname: "**.co",
       },
       {
-        protocol: 'https',
-        hostname: '**.net'
+        protocol: "https",
+        hostname: "**.net",
       },
       {
-        protocol: 'https',
-        hostname: '**.org'
-      }
+        protocol: "https",
+        hostname: "**.org",
+      },
     ],
   },
 };
