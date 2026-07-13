@@ -19,7 +19,7 @@ export default function SingleProduct(props: { data: Product }) {
   const image = cleanImageUrl(data.image);
 
   return (
-    <div className="product-card text-center break-normal w-120 h-159 justify-start flex flex-col items-center bg-gray-300 overflow-hidden">
+    <div className="product-card text-center break-normal w-120 h-159 flex flex-col items-center bg-gray-300">
       <Link target="_blank" href={data.link} className="w-full">
         <div className="relative h-135 w-full justify-center flex items-start">
           <Image

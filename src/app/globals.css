@@ -1,4 +1,3 @@
-@import "tailwindcss";
 @plugin "flowbite-react/plugin/tailwindcss";
 @source "../../.flowbite-react/class-list.json";
 @import "flowbite";
@@ -6,6 +5,8 @@
 
 @custom-variant dark (&:is(.dark *));
 @plugin "daisyui";
+@import "tailwindcss";
+
 
 @theme inline {
   --color-background: var(--background);

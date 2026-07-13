@@ -102,11 +102,11 @@ export default function ShopContent() {
           <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
         </div>
       ) : (
-        <div>
-          <div className="grid grid-cols-12 justify-center items-center mx-auto gap-14 mt-8 w-10/12">
+        <div className="flex flex-col items-center">
+          <div className="product-grid grid grid-cols-12 justify-center items-center md:gap-14 gap-4 mt-8 w-10/12">
             {products.map((product: Product) => (
               <div
-                className="col-span-12 lg:col-span-6 xl:col-span-4 md:col-span-6 sm:col-span-12 xs:col-span-12 flex justify-center"
+                className="w-full lg:col-span-4 xl:col-span-4 md:col-span-6 col-span-6 flex justify-center"
                 key={product.id}
               >
                 <SingleProduct data={product} />
