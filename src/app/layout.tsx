@@ -32,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={lexend.className}>
+      <body className={`${lexend.className} overflow-x-hidden`}>
         <NewNavbar />
         {children}
       </body>
