@@ -19,9 +19,9 @@ export default function SingleProduct(props: { data: Product }) {
   const image = cleanImageUrl(data.image);
 
   return (
-    <div className="product-card text-center break-normal w-120 h-159 flex flex-col items-center bg-gray-300">
+    <div className="product-card text-center break-normal w-full md:w-120 md:h-159 flex flex-col items-center bg-gray-300">
       <Link target="_blank" href={data.link} className="w-full">
-        <div className="relative h-135 w-full justify-center flex items-start">
+        <div className="relative h-80 md:h-135 w-full justify-center flex items-start">
           <Image
             className="object-contain"
             src={image}
@@ -45,7 +45,7 @@ export default function SingleProduct(props: { data: Product }) {
       </Link>
       <h3 className="mt-1 text-slate-500">{data.store}</h3>
       {Number(data.salePrice) > 0 ? (
-        <div className="flex w-full justify-between px-20">
+        <div className="flex w-full justify-between px-6 xl:px-15">
           <span className="mt-1 mb-2 d-inline-block line-through text-gray-600">
             {data.price} EGP
           </span>
