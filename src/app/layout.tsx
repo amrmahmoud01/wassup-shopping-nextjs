@@ -4,7 +4,7 @@ import "./globals.css";
 
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import NewNavbar from '@/app/_components/Navbar/NewNavbar';
+import NewNavbar from "@/app/_components/Navbar/NewNavbar";
 config.autoAddCss = false;
 
 const geistSans = Geist({
@@ -21,7 +21,7 @@ const lexend = Lexend({
   subsets: ["latin"],
 });
 export const metadata: Metadata = {
-  title: "Wazzup Shopping",
+  title: "Wassup Shopping",
   description: "See whats up, with shopping",
 };
 
