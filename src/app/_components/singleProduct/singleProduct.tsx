@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Product } from "@/types/Product.type";
 export default function SingleProduct(props: { data: Product }) {
   const { data } = props;
-
+  //
   function cleanImageUrl(url: string) {
     try {
       const u = new URL(url);
