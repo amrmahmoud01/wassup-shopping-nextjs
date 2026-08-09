@@ -45,7 +45,7 @@ export function FilterDrawer() {
         </Button>
       </div>
       <div className="flex ">
-        <Drawer open={isOpen} onClose={handleClose} className="h-150 mt-30">
+        <Drawer open={isOpen} onClose={handleClose} className="h-screen pt-15">
           <DrawerHeader title="Filters" />
           <form onSubmit={handleSubmit(onSubmit)}>
             <FilterAccordion register={register} watch={watch} />
