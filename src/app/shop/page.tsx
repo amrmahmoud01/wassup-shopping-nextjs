@@ -21,10 +21,10 @@ export default async function Shop({ searchParams }: Props) {
       : undefined,
     params.minPrice ? String(params.minPrice) : undefined,
     params.maxPrice ? String(params.maxPrice) : undefined,
-    params.stores
-      ? Array.isArray(params.stores)
-        ? params.stores
-        : [params.stores]
+    params.store
+      ? Array.isArray(params.store)
+        ? params.store
+        : [params.store]
       : undefined,
     params.search ? String(params.search) : undefined,
     params.onSale ? String(params.onSale) : undefined

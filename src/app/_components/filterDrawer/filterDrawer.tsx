@@ -35,6 +35,7 @@ export function FilterDrawer() {
     if (search) params.set("search", search);
     router.push(`/shop?${params.toString()}`);
     console.log("Filters:", data);
+    console.log("PARAMS:", params.toString());
   }
 
   return (
